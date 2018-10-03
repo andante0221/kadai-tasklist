@@ -1,8 +1,25 @@
 <h1><% @task.id %>　のタスク編集ページ</h1>
 
 <%= form_for(@task) do |f| %>
+
+  <!-- ｴﾗｰﾒｯｾｰｼ表示 -->
+  <% if @task.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+        <% @task.errors.full_messages.each do |task| %>
+          <li><%= task %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
   <%= f.label :content, 'タスク' %>
   <%= f.text_field :content %>
+
+  <%= f.label :status, 'ステータス' %>
+  <%= f.text_field :status %>
+
 
   <%= f.submit '投稿' %>
 <% end %>
