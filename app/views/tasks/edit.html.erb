@@ -1,8 +1,8 @@
-<form class="form-horizontal">
+
 <h1><% @task.id %>　のタスク編集ページ</h1>
 
 <%= form_for(@task) do |f| %>
-
+<form class="form-horizontal">
   <!-- ｴﾗｰﾒｯｾｰｼ表示 -->
   <% if @task.errors.any? %>
     <div id="error_explanation">
@@ -23,7 +23,7 @@
 
 
   <%= f.submit '投稿' %>
+</form>
 <% end %>
 
-<%= link_to '一覧に戻る', task_path %>
-</form>
+<%= link_to '一覧に戻る', tasks_path, class: "btn btn-primary" %>
